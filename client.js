@@ -152,7 +152,7 @@ function initRoutes(app, routes, partials, controllers) {
     if (angular.isString(opts)) opts = {view: opts, _route: opts};
     if (opts.view) {
       opts.template = partials[opts.view] || partials['/partials/' + opts.view];
-      var controller = toController(opts.view);
+      var controller = opts.view + "Controller";
       if (controllers[controller]) opts.controller = controller;
     }
     config[path] = opts;
